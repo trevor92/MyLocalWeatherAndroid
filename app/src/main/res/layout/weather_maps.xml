@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/radar_container">
+
+        <TextView
+            android:id="@+id/radar_label"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#e0e0e0"
+            android:layout_alignWithParentIfMissing="false"
+            android:paddingStart="5dp"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false" />
+
+        <WebView
+            android:id="@+id/radar_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/radar_label"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="2dp"
+            android:scrollIndicators="right"
+            android:layout_centerVertical="true">
+        </WebView>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:focusable="true"
+    android:background="#00CCFF"
+    tools:context=".LocalWeatherMain">
+
+    <RelativeLayout
+        android:id="@+id/home_location"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:textColor="#ffffffff"
+        android:textSize="56sp"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text=""
+        android:id="@+id/home_weather_city"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical|start|center_horizontal"
+        android:paddingStart="5dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="5dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:text=""
+            android:id="@+id/home_weather_description"
+            android:width="100dp"
+            android:paddingStart="30dp"
+            android:textSize="20sp"
+            android:layout_above="@+id/home_weather_icon"
+            android:layout_alignParentStart="false"
+            android:layout_centerVertical="true"
+            android:paddingLeft="30dp"
+            android:layout_alignParentLeft="false" />
+
+        <TextView
+            android:id="@+id/home_current_temp"
+            android:layout_width="225dp"
+            android:layout_height="125dp"
+            android:textColor="#ffffffff"
+            android:textSize="56sp"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/home_weather_description" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="175dp"
+            android:text=""
+            android:id="@+id/home_weather_icon"
+            android:width="100dp"
+            android:textSize="72sp"
+            android:textIsSelectable="false"
+            android:layout_alignParentBottom="true"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/refresh_home_weather"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:text="@string/home_refresh"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <RelativeLayout
+            android:id="@+id/loadingAnimationHomeCurrentWeather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <ProgressBar
+                android:layout_width="250dp"
+                android:layout_height="175dp"
+                android:indeterminate="true" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:text=""
+        android:background="#000000"
+        android:gravity="center_horizontal"
+        android:id="@+id/default_divider"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignBottom="@+id/home_location" />
+
+    <AutoCompleteTextView
+        android:id="@+id/city_input"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="#FFFFFF"
+        android:hint="@string/city_input"
+        android:ems="10"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button android:id="@+id/city_weather_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_weather_search"
+        android:layout_below="@+id/city_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <Button android:id="@+id/city_forecast_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_forecast_search"
+        android:layout_below="@+id/city_weather_search"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:id="@+id/loadingAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

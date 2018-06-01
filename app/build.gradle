@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+def configPropertiesFile = rootProject.file("config.properties")
+def configProperties = new Properties()
+configProperties.load(new FileInputStream(configPropertiesFile))
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'MLWK'
+            keyPassword 'MyL0calW3ath3rKP!'
+            storePassword 'MyL0calW3ath3rKSP!'
+            storeFile file('/home/user/keystores/android.jks')
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.mylocalweather"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        buildTypes.each {
+            it.buildConfigField 'String', 'OWM_API_KEY', configProperties['OWM_API_KEY'] as String
+            it.buildConfigField 'String', 'WU_API_KEY', configProperties['WU_API_KEY'] as String
+
+        }
+        debug {
+            //minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'joda-time:joda-time:2.9.4'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
+
+    <style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">#fff</item>
+    </style>
+
+    <style name="MyOverflowMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:colorBackground">#fff</item>
+    <item name="android:textColor">#0288D1</item>
+</style>
+
+    <!-- Base application theme. -->
+    <style name="LocalWeatherTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:typeface">sans</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">#fff</item>-->
+        <!--<item name="colorAccent">#185F7D</item>-->
+
+    </style>
+</resources>
